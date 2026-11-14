@@ -1,0 +1,688 @@
+
+/* =========================================
+   WHAT'S LEFT? — LUNAR DIGITAL MUSEUM
+   Visual identity: Cinematic / Futuristic
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --bg: #080b10;
+  --surface: #101720;
+  --surface-light: #17212c;
+  --white: #edf3f7;
+  --muted: #8b9aa8;
+  --cyan: #79e5f2;
+  --cyan-dim: rgba(121, 229, 242, 0.12);
+  --border: rgba(173, 208, 222, 0.15);
+  --gold: #d7b77b;
+
+  --font-main: 'Space Grotesk', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+/* RESET */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: var(--font-main);
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+/* BACKGROUND ATMOSPHERE */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 20%,
+      rgba(48, 91, 116, 0.16),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 90% 80%,
+      rgba(38, 83, 106, 0.10),
+      transparent 45%
+    );
+}
+
+/* HERO */
+
+.hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 100px 12%;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 9, 15, 0.96) 0%,
+      rgba(5, 9, 15, 0.65) 55%,
+      rgba(5, 9, 15, 0.15) 100%
+    ),
+    url("https://images.unsplash.com/photo-1446776811953-b23d57bd21aa")
+    center / cover no-repeat;
+}
+
+/* Small exhibition label */
+
+.hero::before {
+  content: "LUNAR ARCHIVE  /  EXHIBITION 001";
+  font-family: var(--font-mono);
+  color: var(--cyan);
+  font-size: 11px;
+  letter-spacing: 4px;
+  margin-bottom: 35px;
+}
+
+/* Decorative orbital ring */
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 580px;
+  height: 580px;
+  border: 1px solid rgba(121, 229, 242, 0.12);
+  border-radius: 50%;
+  right: -130px;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow:
+    0 0 100px rgba(121, 229, 242, 0.04),
+    inset 0 0 100px rgba(121, 229, 242, 0.03);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.hero h1 {
+  font-size: clamp(5rem, 13vw, 11rem);
+  line-height: 0.78;
+  font-weight: 700;
+  letter-spacing: -9px;
+
+  background: linear-gradient(
+    150deg,
+    #ffffff 20%,
+    #a8bac5 65%,
+    #66818e
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  text-shadow: 0 10px 80px rgba(121, 229, 242, 0.08);
+}
+
+.ask {
+  color: #a9bac5;
+  font-size: clamp(14px, 2vw, 19px);
+  margin-top: 40px;
+  letter-spacing: 1px;
+  max-width: 450px;
+}
+
+/* BUTTON */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+
+  margin-top: 38px;
+  padding: 16px 27px;
+
+  color: var(--bg);
+  background: var(--cyan);
+  text-decoration: none;
+
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  border: 1px solid var(--cyan);
+  transition: 0.3s ease;
+}
+
+.btn::after {
+  content: "↗";
+  font-size: 17px;
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--cyan);
+  box-shadow: 0 0 30px rgba(121, 229, 242, 0.15);
+  transform: translateY(-3px);
+}
+
+/* COLLECTION */
+
+#collection {
+  padding: 120px 9%;
+  position: relative;
+}
+
+#collection h2,
+.end h2 {
+  font-size: clamp(2.3rem, 5vw, 4rem);
+  font-weight: 500;
+  letter-spacing: -2px;
+}
+
+#collection h2::before {
+  content: "01 / THE EXHIBITION";
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: var(--cyan);
+  margin-bottom: 20px;
+}
+
+.lede {
+  color: var(--muted);
+  max-width: 650px;
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+/* LEGEND */
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  list-style: none;
+  margin: 40px 0;
+  padding: 20px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.5px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 12px currentColor;
+}
+
+/* Assign status classes to the dots in your HTML:
+   .dot.active = still in use
+   .dot.off = switched off
+   .dot.pending = pending verification
+*/
+
+.legend li:nth-child(2) .dot {
+  background: var(--gold);
+}
+
+.legend li:nth-child(3) .dot {
+  background: #82909d;
+}
+
+/* MUSEUM LAYOUT */
+
+.museum {
+  display: grid;
+  grid-template-columns: minmax(230px, 0.8fr) minmax(0, 1.7fr);
+  gap: 30px;
+  align-items: start;
+}
+
+/* OBJECT LIST */
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.list > * {
+  padding: 20px;
+  background: rgba(16, 23, 32, 0.8);
+  border: 1px solid var(--border);
+  color: var(--white);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.list > *:hover {
+  background: var(--surface-light);
+  border-color: var(--cyan);
+  transform: translateX(5px);
+  box-shadow: -3px 0 0 var(--cyan);
+}
+
+/* HOLOGRAPHIC DISPLAY */
+
+.holo {
+  min-width: 0;
+  padding: 25px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(24, 36, 48, 0.92),
+      rgba(9, 14, 21, 0.98)
+    );
+
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.holo::before {
+  content: "OBJECT DISPLAY / LIVE VIEW";
+  display: block;
+  font-family: var(--font-mono);
+  color: var(--cyan);
+  font-size: 9px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.holo::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: var(--cyan);
+  filter: blur(120px);
+  opacity: 0.08;
+  top: 20%;
+  right: 10%;
+  pointer-events: none;
+}
+
+.stage {
+  width: 100%;
+  height: clamp(280px, 40vw, 480px);
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(74, 123, 146, 0.18),
+      rgba(8, 11, 16, 0.95) 70%
+    );
+
+  border: 1px solid rgba(121, 229, 242, 0.10);
+}
+
+.stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(121,229,242,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(121,229,242,.04) 1px, transparent 1px);
+  background-size: 35px 35px;
+  pointer-events: none;
+}
+
+#mv {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 1;
+}
+
+.slot {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* OBJECT INFORMATION */
+
+.tag {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 6px 12px;
+
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: var(--cyan);
+  background: var(--cyan-dim);
+  border: 1px solid rgba(121, 229, 242, 0.2);
+}
+
+.holo h3 {
+  margin: 18px 0;
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+#facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  padding: 20px 0;
+  border-top: 1px solid var(--border);
+}
+
+#facts dt {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--cyan);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+#facts dd {
+  color: #c4d0d7;
+  font-size: 13px;
+}
+
+.src {
+  border-top: 1px solid var(--border);
+  padding-top: 18px;
+  margin-top: 10px;
+
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--muted);
+}
+
+/* END SECTION */
+
+.end {
+  padding: 110px 12%;
+  background:
+    linear-gradient(
+      180deg,
+      var(--bg),
+      #101b25
+    );
+  border-top: 1px solid var(--border);
+}
+
+.end h2 {
+  margin-bottom: 30px;
+}
+
+.end h2::before {
+  content: "02 / BEYOND THE MISSION";
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: var(--cyan);
+  margin-bottom: 20px;
+}
+
+.end p {
+  color: var(--muted);
+  max-width: 750px;
+  font-size: 15px;
+  margin-bottom: 20px;
+  line-height: 2;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #304653;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cyan);
+}
+
+/* SELECTION */
+
+::selection {
+  background: var(--cyan);
+  color: var(--bg);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+  .hero {
+    padding: 80px 8%;
+  }
+
+  .hero h1 {
+    letter-spacing: -5px;
+  }
+
+  .hero::after {
+    width: 350px;
+    height: 350px;
+    right: -180px;
+  }
+
+  #collection {
+    padding: 80px 6%;
+  }
+
+  .museum {
+    grid-template-columns: 1fr;
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .legend {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .end {
+    padding: 80px 8%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 5rem;
+    letter-spacing: -5px;
+  }
+
+  .list {
+    grid-template-columns: 1fr;
+  }
+
+  .holo {
+    padding: 15px;
+  }
+
+  #facts {
+    grid-template-columns: 1fr;
+  }
+
+  .stage {
+    height: 300px;
+  }
+}
+
+/* Interactive artifact buttons */
+
+.artifact-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  font-family: var(--font-main);
+}
+
+.artifact-number {
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.artifact-title {
+  flex: 1;
+}
+
+.artifact-arrow {
+  color: var(--muted);
+}
+
+.artifact-button.selected {
+  border-color: var(--cyan);
+  background: var(--cyan-dim);
+  box-shadow: -3px 0 0 var(--cyan);
+}
+
+.artifact-button:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+/* Status variations */
+
+.status-active {
+  color: #79e5f2;
+}
+
+.status-off {
+  color: #d7b77b;
+}
+
+.status-left {
+  color: #c1a3ef;
+}
+
+.status-pending {
+  color: #a0aab5;
+}
+
+/* Research references */
+
+.src ul {
+  margin: 12px 0 0 18px;
+}
+
+.src li {
+  margin-bottom: 7px;
+}
+
+/* ===== NASA ACKNOWLEDGMENT ===== */
+
+.nasa-acknowledgment {
+    position: relative;
+    max-width: 900px;
+    margin: 80px auto 30px;
+    padding: 35px 40px;
+    background: linear-gradient(
+        135deg,
+        rgba(12, 25, 48, 0.95),
+        rgba(5, 12, 27, 0.98)
+    );
+    border: 1px solid rgba(91, 173, 255, 0.25);
+    border-left: 3px solid #58aaff;
+    border-radius: 12px;
+    box-shadow: 0 0 35px rgba(40, 120, 220, 0.08);
+    overflow: hidden;
+}
+
+.nasa-acknowledgment::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(
+        circle,
+        rgba(57, 145, 255, 0.12),
+        transparent 70%
+    );
+    pointer-events: none;
+}
+
+.nasa-acknowledgment h3 {
+    color: #80bdff;
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.nasa-acknowledgment p {
+    color: #c3d0e0;
+    font-size: 0.95rem;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.nasa-acknowledgment .disclaimer {
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #71849d;
+    font-size: 0.78rem;
+    letter-spacing: 0.3px;
+    margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+    .nasa-acknowledgment {
+        margin: 50px 15px 25px;
+        padding: 25px 22px;
+    }
+
+    .nasa-acknowledgment h3 {
+        font-size: 0.75rem;
+        letter-spacing: 2.5px;
+    }
+}
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>WHAT’S LEFT? A museum of what humanity left on the Moon</title>
+  <link href="https://googleapis.com" rel="stylesheet">
+  <script type="module"
+     src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js">
+  </script>
+  <link rel="stylesheet" href="what'sleft.css">
+  
+</head>
+
+<body>
+
+  <header class="hero">
+    <h1>WHAT’S<br>LEFT?</h1>
+    <p class="ask">What remains after humanity completes a mission?</p>
+    <a class="btn" href="#collection">Enter the lunar collection</a>
+  </header>
+
+  <section id="collection">
+    <h2>The Lunar Collection</h2>
+    <p class="lede">Every object here was sent to the Moon for a reason. Each one was left, switched off, or still works. Choose an object to see which.</p>
+    
+    <ul class="legend">
+      <li><span class="dot"></span>Still in use</li>
+      <li><span class="dot"></span>Switched off by NASA</li>
+      <li><span class="dot"></span>Status pending NASA verification</li>
+      <li><span class="dot"></span>Left on the lunar surface</li>
+    </ul>
+
+    <div class="museum">
+      <div class="list" id="list"></div>
+      <article class="holo" aria-live="polite">
+        <div class="stage" id="stage">
+          <model-viewer id="mv" alt="3D model of the selected lunar object" camera-controls auto-rotate shadow-intensity="1" exposure="1.1"></model-viewer>
+          <div class="slot" id="slot"></div>
+        </div>
+        <span class="tag" id="tag"></span>
+        <h3 id="name"></h3>
+        <dl id="facts"></dl>
+        <p class="src" id="src"></p>
+      </article>
+    </div>
+  </section>
+
+  <section class="end">
+    <h2>Why these objects matter</h2>
+    <p>A mission does not end when the crew leaves. Mirrors placed in 1969 still give scientists measurements today. A network of instruments ran far longer than planned, then was switched off because of priorities and funding. Each object holds a decision about what to keep, what to stop, and what to leave behind.</p>
+    <p>WHAT’S LEFT? starts with the Moon, where the evidence is closest and the records are best.</p>
+  </section>
+
+<script src="script.js" defer></script>
+  
+<section class="nasa-acknowledgment">
+    <h3>NASA Acknowledgment</h3>
+    <p>
+        WHAT'S LEFT? was inspired by NASA's exploration of the Moon
+        and the human-made equipment left behind during lunar missions.
+        This project uses publicly available NASA resources and 3D assets
+        to preserve the history of space exploration and raise awareness
+        of humanity's lasting presence beyond Earth.
+    </p>
+    <p class="disclaimer">
+        This is an independent student project and is not officially
+        affiliated with or endorsed by NASA.
+    </p>
+</section>
+</body>
+
+</html>
